@@ -19,16 +19,3 @@ zstyle ':vcs_info:git:*' formats '%F{red}%b%f'
 setopt PROMPT_SUBST
 PROMPT='%F{cyan}%n%f%F{cyan}@%f%F{cyan}%m%f %F{magenta}%~%f %F{magenta}%#%f '
 RPROMPT=\$vcs_info_msg_0_
-
-# Set pyenv shims to initialize
-alias brew='env PATH="${PATH//$(pyenv root)/shims:/}" brew'
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
-fi
-
-# Export
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-source /Users/wlfd/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
